@@ -7,7 +7,7 @@ prepare:
 	spectool -g -R $(spec)
 
 srpm: prepare
-	rpmbuild -bs --define "_srcrpmdir $(outdir)" $(spec)
+	rpmbuild --without=check -bs --define "_srcrpmdir $(outdir)" $(spec)
 
 rpm: prepare
-	rpmbuild -bb --define "_rpmdir $(outdir)" $(spec)
+	rpmbuild --without=check -bb --define "_rpmdir $(outdir)" $(spec)
