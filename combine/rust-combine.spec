@@ -5,7 +5,7 @@
 %global crate combine
 
 Name:           rust-%{crate}
-Version:        4.3.2
+Version:        3.8.1
 Release:        1%{?dist}
 Summary:        Fast parser combinators on arbitrary streams with zero-copy support
 
@@ -51,52 +51,28 @@ which use "default" feature of "%{crate}" crate.
 %files       -n %{name}+default-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+bytes_05-devel
+%package     -n %{name}+combine-regex-1-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+bytes_05-devel %{_description}
+%description -n %{name}+combine-regex-1-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "bytes_05" feature of "%{crate}" crate.
+which use "combine-regex-1" feature of "%{crate}" crate.
 
-%files       -n %{name}+bytes_05-devel
+%files       -n %{name}+combine-regex-1-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+futures-03-devel
+%package     -n %{name}+doc-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+futures-03-devel %{_description}
+%description -n %{name}+doc-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "futures-03" feature of "%{crate}" crate.
+which use "doc" feature of "%{crate}" crate.
 
-%files       -n %{name}+futures-03-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+futures-io-03-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+futures-io-03-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "futures-io-03" feature of "%{crate}" crate.
-
-%files       -n %{name}+futures-io-03-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+futures-util-03-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+futures-util-03-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "futures-util-03" feature of "%{crate}" crate.
-
-%files       -n %{name}+futures-util-03-devel
+%files       -n %{name}+doc-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
 %package     -n %{name}+mp4-devel
@@ -111,30 +87,6 @@ which use "mp4" feature of "%{crate}" crate.
 %files       -n %{name}+mp4-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+pin-project-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+pin-project-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "pin-project" feature of "%{crate}" crate.
-
-%files       -n %{name}+pin-project-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+pin-project-lite-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+pin-project-lite-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "pin-project-lite" feature of "%{crate}" crate.
-
-%files       -n %{name}+pin-project-lite-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
 %package     -n %{name}+regex-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -147,6 +99,18 @@ which use "regex" feature of "%{crate}" crate.
 %files       -n %{name}+regex-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
+%package     -n %{name}+regex-1-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+regex-1-devel %{_description}
+
+This package contains library source intended for building other packages
+which use "regex-1" feature of "%{crate}" crate.
+
+%files       -n %{name}+regex-1-devel
+%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
+
 %package     -n %{name}+std-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -157,30 +121,6 @@ This package contains library source intended for building other packages
 which use "std" feature of "%{crate}" crate.
 
 %files       -n %{name}+std-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+tokio-02-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+tokio-02-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "tokio-02" feature of "%{crate}" crate.
-
-%files       -n %{name}+tokio-02-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+tokio-02-dep-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+tokio-02-dep-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "tokio-02-dep" feature of "%{crate}" crate.
-
-%files       -n %{name}+tokio-02-dep-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
 %prep
@@ -202,5 +142,5 @@ which use "tokio-02-dep" feature of "%{crate}" crate.
 %endif
 
 %changelog
-* Tue Sep 22 18:21:00 CEST 2020 kai - 4.3.2-1
+* Tue Sep 22 19:14:53 CEST 2020 pluth <pluth@0t.re> - 3.8.1-1
 - Initial package

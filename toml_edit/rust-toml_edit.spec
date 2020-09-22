@@ -5,7 +5,7 @@
 %global crate toml_edit
 
 Name:           rust-%{crate}
-Version:        0.2.0
+Version:        0.1.5
 Release:        1%{?dist}
 Summary:        Yet another format-preserving TOML parser
 
@@ -70,5 +70,5 @@ which use "default" feature of "%{crate}" crate.
 %endif
 
 %changelog
-* Tue Sep 22 18:42:24 CEST 2020 pluth <pluth@0t.re> - 0.2.0-1
+* Tue Sep 22 19:15:36 CEST 2020 pluth <pluth@0t.re> - 0.1.5-1
 - Initial package
