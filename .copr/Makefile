@@ -3,7 +3,8 @@ rpmbuild_src = $(shell rpmbuild --eval '%{_sourcedir}')
 
 prepare:
 	dnf -y install rpmdevtools rpm-build
-	cp *.patch $(rpmbuild_src)
+	# cp *.patch $(rpmbuild_src)
+	find . -name \*.diff -exec cp {} $(rpmbuild_src) \;
 	spectool -g -R $(spec)
 
 srpm: prepare

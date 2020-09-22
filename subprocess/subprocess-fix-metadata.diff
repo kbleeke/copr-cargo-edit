@@ -1,0 +1,9 @@
+--- subprocess-0.2.6/Cargo.toml	2020-09-21T15:27:00+00:00
++++ subprocess-0.2.6/Cargo.toml	2020-09-22T16:26:42.097114+00:00
+@@ -29,6 +29,3 @@
+ version = "0.2.66"
+ [dev-dependencies.tempdir]
+ version = "0.3.7"
+-[target."cfg(windows)".dependencies.winapi]
+-version = "0.3.8"
+-features = ["std", "handleapi", "namedpipeapi", "processenv", "synchapi", "winerror", "processthreadsapi", "winbase"]
